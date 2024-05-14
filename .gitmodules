@@ -1,9 +1,9 @@
 [submodule "Server"]
 	path = Server
-	url = https://github.com/SecretsOTheP/EQMacEmu
+	url = https://github.com/kai-blt/EQMacEmu
 [submodule "Quests"]
 	path = Quests
-	url = https://github.com/SecretsOTheP/quests
+	url = https://github.com/kai-blt/quests
 [submodule "Maps"]
 	path = Maps
-	url = https://github.com/EQMacEmu/Maps
+	url = https://github.com/kai-blt/Maps
