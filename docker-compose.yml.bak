@@ -10,7 +10,6 @@ x-base-service: &base-service
     SERVER_SHORT_NAME: ${SERVER_SHORT_NAME:-EQMac Docker}
     SERVER_LONG_NAME: ${SERVER_LONG_NAME:-EQMac Docker}
     WAIT_HOSTS: db:3306
-    BUILD_LOGGING: true
 
 services:
   shared:
@@ -49,11 +48,10 @@ services:
     <<: *base-service
     command: ['/app/eqlaunch', 'dynzone1']
     ports:
-      - 7360-7374:7360-7374/tcp
-      - 7360-7374:7360-7374/udp
+      - 7000-7374:7000-7374/tcp
+      - 7000-7374:7000-7374/udp
     volumes:
       - shared:/app/shared
-      - ./Quests:/app/quests
     depends_on:
       - db
       - world
@@ -91,13 +89,13 @@ services:
     build:
       context: .
       dockerfile: containers/database/Dockerfile
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: enabled
       MYSQL_USER: ${DATABASE_USER:-eq}
       MYSQL_PASSWORD: ${DATABASE_PASSWORD:-eq}
       MYSQL_DATABASE: ${DATABASE_NAME:-eq}
+    ports:
+      - 3306:3306/tcp
     volumes:
       - database:/var/lib/mysql
 
