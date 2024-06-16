@@ -8,3 +8,4 @@ ADD Server/loginserver/login_util/updates/2023_07_27_tblLoginServerAccounts.sql 
 
 ADD containers/database/auto_create.sql /docker-entrypoint-initdb.d/z_auto_create.sql
 ADD containers/database/launcher_boats.sql /docker-entrypoint-initdb.d/z_launcher_boats.sql
+ADD containers/database/quake_data.sql /docker-entrypoint-initdb.d/z_quake_data.sql
